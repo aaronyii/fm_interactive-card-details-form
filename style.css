@@ -45,7 +45,7 @@ body {
     height: 100%
 }
 
-.top .back_card .display_cvc {
+.top .back_card .display-cvc {
     position: absolute;
     font-size: 0.8rem;
     color: white;
@@ -130,6 +130,7 @@ body {
     border: 1px solid rgba(128, 128, 128, 0.346);
     border-radius: 10px;
     outline: none;
+    font-family: inherit;
 }
 
 
@@ -177,6 +178,12 @@ body {
     font-size: 1.25rem;
 }
 
+.date-cvc input::-webkit-outer-spin-button,
+.date-cvc input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .date-cvc .cvc{
     display: flex;
     flex-direction: column;
@@ -214,5 +221,9 @@ body {
 }
 
 .invalid {
-    border: 1px solid hsl(0, 100%, 66%);
+    border: 1px solid hsl(0, 100%, 66%) !important;
+}
+
+.hidden {
+    display: none;
 }
