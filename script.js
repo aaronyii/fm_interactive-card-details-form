@@ -12,6 +12,9 @@ const input_cardNumber = document.getElementById("card_number")
 const input_dateMonth = document.getElementById("month")
 const input_dateYear = document.getElementById("year")
 const input_cvc = document.getElementById("cvc")
+const bottom = document.querySelector(".bottom")
+const successContainer = document.querySelector(".success-container")
+const successBtn = document.querySelector(".success-container button")
 
 
 
@@ -31,11 +34,11 @@ const reset = () => {
     display_cardName.textContent = "JANE APPLESEED"
     display_cardNumber.textContent = "0000 0000 0000 0000"
     display_cvc.textContent = "000"
-    // input_cardName.value = ""
-    // input_cardNumber.value = ""
-    // input_dateMonth.value = ""
-    // input_dateYear.value = ""
-    // input_cvc.value = ""
+    input_cardName.value = ""
+    input_cardNumber.value = ""
+    input_dateMonth.value = ""
+    input_dateYear.value = ""
+    input_cvc.value = ""
 }
 
 const resetError = () => {
@@ -108,7 +111,6 @@ submitBtn.addEventListener("click", (e) => {
         display_cardNumber.textContent = "0000 0000 0000 0000"
         display_cardDate.textContent = "00/00"
         display_cvc.textContent = "000"
-        reset()
         return
     }
 
@@ -116,8 +118,18 @@ submitBtn.addEventListener("click", (e) => {
     display_cardNumber.textContent = input_cardNumber.value
     display_cardDate.textContent = `${input_dateMonth.value}/${input_dateYear.value}`
     display_cvc.textContent = input_cvc.value
+    successContainer.classList.remove("hidden")
+    bottom.classList.add("hidden")
 
 
+})
+
+successBtn.addEventListener('click', () => {
+    reset()
+    successContainer.classList.add("hidden")
+    bottom.classList.remove("hidden")
+
+    
 })
 
 
